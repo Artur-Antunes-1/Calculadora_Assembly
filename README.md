@@ -171,7 +171,8 @@ Fracao/Mantissa (23 bits): 10010000000000000000000
 
 ## Limitações
 
-- A conversão de float atualmente funciona apenas com números inteiros (a conversão completa de strings float seria necessário usar funções da biblioteca C)
+- Operações encerram com código de erro 1 apesar de estarem funcionando
+- É necessário rodar novamente para realizar outra operação
 - O programa foi desenvolvido para sistemas Linux 64-bit
 
 ## Notas Técnicas
@@ -179,10 +180,6 @@ Fracao/Mantissa (23 bits): 10010000000000000000000
 - O programa usa chamadas de sistema Linux (syscalls) para I/O
 - Todas as conversões são feitas mostrando os passos intermediários
 - O formato IEEE 754 é o padrão de 32 bits (single precision)
-
-## Autor
-
-Projeto desenvolvido para fins didáticos.
 
 ## Licença
 
