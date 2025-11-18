@@ -1,0 +1,169 @@
+========================================
+EXEMPLOS DE USO - CALCULADORA DIDÁTICA
+========================================
+
+Este arquivo contém exemplos de como usar a calculadora e os resultados esperados.
+
+========================================
+EXEMPLO 1: Conversão para Binário (Base 2)
+========================================
+
+Entrada: 42
+
+Saída esperada:
+=== CONVERSAO PARA BASE 2 (BINARIO) ===
+
+--- PASSOS DA CONVERSAO ---
+Numero original: 42
+
+Passo: 42 / 2 = 21 (resto: 0)
+Passo: 21 / 2 = 10 (resto: 1)
+Passo: 10 / 2 = 5 (resto: 0)
+Passo: 5 / 2 = 2 (resto: 1)
+Passo: 2 / 2 = 1 (resto: 0)
+Passo: 1 / 2 = 0 (resto: 1)
+
+RESULTADO FINAL: 101010
+
+42 em binario: 101010
+
+
+========================================
+EXEMPLO 2: Conversão para Octal (Base 8)
+========================================
+
+Entrada: 255
+
+Saída esperada:
+=== CONVERSAO PARA BASE 8 (OCTAL) ===
+
+--- PASSOS DA CONVERSAO ---
+Numero original: 255
+
+Passo: 255 / 8 = 31 (resto: 7)
+Passo: 31 / 8 = 3 (resto: 7)
+Passo: 3 / 8 = 0 (resto: 3)
+
+RESULTADO FINAL: 377
+
+255 em octal: 377
+
+
+========================================
+EXEMPLO 3: Conversão para Hexadecimal (Base 16)
+========================================
+
+Entrada: 255
+
+Saída esperada:
+=== CONVERSAO PARA BASE 16 (HEXADECIMAL) ===
+
+--- PASSOS DA CONVERSAO ---
+Numero original: 255
+
+Passo: 255 / 16 = 15 (resto: 15)
+Passo: 15 / 16 = 0 (resto: 15)
+
+RESULTADO FINAL: FF
+
+255 em hexadecimal: FF
+
+
+========================================
+EXEMPLO 4: Conversão para BCD
+========================================
+
+Entrada: 123
+
+Saída esperada:
+=== CONVERSAO PARA BCD ===
+
+--- PASSOS DA CONVERSAO ---
+Numero original: 123
+
+RESULTADO FINAL: 1 = 0001 2 = 0010 3 = 0011
+
+123 em BCD: 0001 0010 0011
+
+
+========================================
+EXEMPLO 5: Conversão para Float IEEE 754
+========================================
+
+Entrada: 12
+
+Saída esperada:
+=== CONVERSAO PARA FLOAT IEEE 754 ===
+
+Numero original: 12
+
+Representacao binaria completa (32 bits): 01000001010000000000000000000000
+Representacao hexadecimal: 0x41400000
+
+Bit de Sinal (1 bit): 0
+
+Expoente (8 bits): 10000010
+  (valor com viés 127): 130
+  (valor real do expoente): 3
+
+Fracao/Mantissa (23 bits): 10000000000000000000000
+
+NOTA: O expoente real é 130 - 127 = 3
+      Isso significa 1.5 × 2^3 = 12.0
+
+
+========================================
+EXEMPLO 6: Conversão para Float IEEE 754 (Negativo)
+========================================
+
+Entrada: -5
+
+Saída esperada:
+=== CONVERSAO PARA FLOAT IEEE 754 ===
+
+Numero original: -5
+
+Representacao binaria completa (32 bits): 11000000101000000000000000000000
+Representacao hexadecimal: 0xC0A00000
+
+Bit de Sinal (1 bit): 1  (número negativo)
+
+Expoente (8 bits): 10000001
+  (valor com viés 127): 129
+  (valor real do expoente): 2
+
+Fracao/Mantissa (23 bits): 01000000000000000000000
+
+
+========================================
+NOTAS IMPORTANTES
+========================================
+
+1. A conversão de float atualmente funciona melhor com números inteiros.
+   Para números decimais completos (ex: 12.5), seria necessário usar
+   funções da biblioteca C ou implementar um parser completo.
+
+2. O formato IEEE 754 usa:
+   - 1 bit para sinal (0 = positivo, 1 = negativo)
+   - 8 bits para expoente (com viés de 127)
+   - 23 bits para mantissa/fração
+
+3. O número em float é representado como:
+   (-1)^s × (1 + mantissa) × 2^(expoente - 127)
+
+4. BCD (Binary Coded Decimal) representa cada dígito decimal
+   usando 4 bits binários (0000 a 1001 para 0 a 9).
+
+
+========================================
+COMO TESTAR
+========================================
+
+1. Compile o programa: make
+2. Execute: ./calculadora
+3. Escolha uma opção do menu (1-5)
+4. Digite o número solicitado
+5. Observe os passos da conversão e o resultado final
+
+========================================
+
